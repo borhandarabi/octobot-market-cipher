@@ -1,0 +1,6 @@
+{
+  "version": "1.5.1",
+  "origin_package": "Octane-Default-Tentacles",
+  "tentacles": ["MarketCipherMode"],
+  "tentacles-requirements": ["TimeFrameStrategyEvaluator", "basic_tentacles"]
+}

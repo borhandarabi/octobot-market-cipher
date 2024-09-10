@@ -1,0 +1,51 @@
+{
+    "activation_method": "once per bar close",
+    "candle_source": "hlc3",
+    "data_source_settings": {
+        "candle_source": "hlc3",
+        "data_source_settings_BTC/USDT": {
+            "enable_custom_source_BTC/USDT": false,
+            "inverse_signals_BTC/USDT": false,
+            "trade_on_BTC/USDT": true
+        }
+    },
+    "data_source_settings_BTC/USDT": {
+        "enable_custom_source_BTC/USDT": false,
+        "inverse_signals_BTC/USDT": false,
+        "trade_on_BTC/USDT": true
+    },
+    "default_config": [
+        "TimeFrameStrategyEvaluator"
+    ],
+    "display_settings": {
+        "plotting_mode": "Replot history mode"
+    },
+    "market_cipher_settings": {
+        "Channel_Length": "14",
+        "Average_Length": "5",
+        "MA_Length": "10",
+        "is_HeikinAshi": true
+    },
+    "enable_custom_source_BTC/USDT": false,
+    "enable_long_orders": true,
+    "enable_short_orders": true,
+    "exit_type": "switch sides on exits / entries",
+    "inverse_signals_BTC/USDT": false,
+    "inverse_signals_ETH/USDT": false,
+    "long_order_size": "100%",
+    "order_settings": {
+        "enable_long_orders": true,
+        "enable_short_orders": true,
+        "exit_type": "switch sides on exits / entries",
+        "long_order_size": "100%",
+        "order_type": "regular Order",
+        "short_order_size": "100%"
+    },
+    "order_type": "regular Order",
+    "plotting_mode": "Replot history mode",
+    "required_strategies": [
+        "TimeFrameStrategyEvaluator"
+    ],
+    "short_order_size": "100%",
+    "trade_on_BTC/USDT": true
+}
