@@ -21,9 +21,9 @@
         "plotting_mode": "Replot history mode"
     },
     "market_cipher_settings": {
-        "Channel_Length": "14",
-        "Average_Length": "5",
-        "MA_Length": "10",
+        "Channel_Length": "11",
+        "Average_Length": "16",
+        "MA_Length": "2",
         "is_HeikinAshi": true
     },
     "enable_custom_source_BTC/USDT": false,
