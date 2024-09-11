@@ -29,7 +29,7 @@ import tentacles.Meta.Keywords.basic_tentacles.matrix_basic_keywords.orders.mana
 import tentacles.Meta.Keywords.basic_tentacles.matrix_basic_keywords.orders.managed_order_pro.utilities as matrix_utilities
 import tentacles.Meta.Keywords.scripting_library.orders.order_types.create_order as create_order
 import tentacles.Meta.Keywords.scripting_library.orders.position_size as position_size
-import tentacles.Meta.Keywords.scripting_library.orders.offsets as offsets
+import tentacles.Meta.Keywords.basic_tentacles.matrix_basic_keywords.orders.offsets as offsets
 
 
 class ScaledOrderValueDistributionTypes:

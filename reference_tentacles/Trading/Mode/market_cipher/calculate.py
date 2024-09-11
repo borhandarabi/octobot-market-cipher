@@ -1,9 +1,6 @@
-import typing
 import numpy
 import numpy.typing as npt
-import tulipy
 import talib
-import pandas as pd
 
 import octobot_commons.enums as enums
 import octobot_trading.modes.script_keywords.context_management as context_management

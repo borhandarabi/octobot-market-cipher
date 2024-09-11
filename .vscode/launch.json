@@ -1,0 +1,318 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Start OctoBot",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "EXIT_BEFORE_TENTACLES_AUTO_REINSTALL": "True",
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel;/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager;/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons;/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading;/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting;/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators;/opt/venv/lib64/python3.10/site-packages/OctoBot-Services;/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "program": "OctoBot",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": [],
+            "justMyCode": false
+        },
+        {
+            // run the following to be able to view profiler reports:
+            // pip install snakeviz
+            //
+            // snakeviz profiler/result.prof
+            "name": "Start OctoBot in profiler mode",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "EXIT_BEFORE_TENTACLES_AUTO_REINSTALL": "True",
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "cProfile",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-o",
+                "${workspaceFolder}/profiler/result.prof",
+                "octobot-packages/OctoBot/start.py"
+            ],
+            "justMyCode": false
+        },
+        {
+            // run the following to be able to view profiler reports:
+            // pip install snakeviz
+            //
+            // snakeviz profiler/result.prof
+            "name": "Start Backtesting in profiler mode",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "EXIT_BEFORE_TENTACLES_AUTO_REINSTALL": "True",
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "cProfile",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-o",
+                "${workspaceFolder}/profiler/result-backtesting.prof",
+                "octobot-packages/OctoBot/start.py",
+                "--backtesting",
+                "-nl",
+                "-bf",
+                "ExchangeBotSnapshotWithHistoryCollector_binance_1000SATSUSDT-1INCHUSDT-AAVEUSDT-ACAUSDT-ACEUSDT-ACHUSDT-ACMUSDT-ADAUSDT-ADXUSDT-AEVOUSDT-A_4h.data"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Create Tentacle Package ZIP",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "EXIT_BEFORE_TENTACLES_AUTO_REINSTALL": "True",
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "program": "octobot-packages/OctoBot/start.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "tentacles",
+                "-p",
+                "tentacle_zips/any_platform.zip",
+                "-d",
+                "./tentacles"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Install Tentacle Package ZIP",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "EXIT_BEFORE_TENTACLES_AUTO_REINSTALL": "True",
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "program": "octobot-packages/OctoBot/start.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "tentacles",
+                "--install",
+                "--all",
+                "--location",
+                "./output/tentacle_zips/any_platform.zip"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Start backtesting on binance_BTCUSDT_1m data file",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "EXIT_BEFORE_TENTACLES_AUTO_REINSTALL": "True",
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "program": "octobot-packages/OctoBot/start.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "--backtesting",
+                "-nl",
+                "-bf",
+                "ExchangeBotSnapshotWithHistoryCollector_binance_BTCUSDT_1m.data"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Start backtesting with profiler on binance_BTCUSDT_1m data file",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "EXIT_BEFORE_TENTACLES_AUTO_REINSTALL": "True",
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "cProfile",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-o",
+                "${workspaceFolder}/profiler/result.prof",
+                "start.py",
+                "--backtesting",
+                "-nl",
+                "-bf",
+                "ExchangeBotSnapshotWithHistoryCollector_binance_BTCUSDT_1m.data"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "View profiler results",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}/profiler/start_view_profiler_result.ps1",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Start Async-Channel tests",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "/opt/venv/lib64/python3.10/site-packages/Async-Channel",
+            "args": [
+                "-vv",
+                "tests"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Start OctoBot-Commons tests",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons",
+            "args": [
+                "-vv",
+                "tests"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Start OctoBot-Backtesting tests",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting",
+            "args": [
+                "-vv",
+                "tests"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Start OctoBot-Trading tests",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading",
+            "args": [
+                "-vv",
+                "tests"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Start OctoBot-evaluators tests",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators",
+            "args": [
+                "-vv",
+                "tests"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Start OctoBot-Tentacles-Manager tests",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager",
+            "args": [
+                "-vv",
+                "tests"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Start OctoBot-Services tests",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "/opt/venv/lib64/python3.10/site-packages/OctoBot-Services",
+            "args": [
+                "-vv",
+                "tests"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Start OctoBot tests",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}${pathSeparator}/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "/opt/venv/lib64/python3.10/site-packages/OctoBot",
+            "args": [
+                "-vv",
+                "tests"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Start trading-backend tests",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "/opt/venv/lib64/python3.10/site-packages/trading-backend",
+            "args": [
+                "-vv",
+                "tests"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Start OctoBot tentacles tests",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "PYTHONPATH": "/opt/venv/lib64/python3.10/site-packages/Async-Channel${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Tentacles-Manager${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Commons${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Trading${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Backtesting${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-evaluators${pathSeparator}/opt/venv/lib64/python3.10/site-packages/OctoBot-Services${pathSeparator}/opt/venv/lib64/python3.10/site-packages/trading-backend"
+            },
+            "module": "pytest",
+            "console": "integratedTerminal",
+            "cwd": "/opt/venv/lib64/python3.10/site-packages/OctoBot",
+            "args": [
+                "-vv",
+                "tentacles"
+            ],
+            "justMyCode": true
+        }
+    ]
+}

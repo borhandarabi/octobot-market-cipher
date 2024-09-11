@@ -1,0 +1,13 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+    "python.analysis.extraPaths": [
+        // "./octobot-packages/OctoBot",
+        "/opt/venv/lib64/python3.10/site-packages/trading-backend/Async-Channel",
+        "./opt/venv/lib64/python3.10/site-packages/trading-backend/OctoBot-Backtesting",
+        "/opt/venv/lib64/python3.10/site-packages/trading-backend/OctoBot-Commons",
+        "/opt/venv/lib64/python3.10/site-packages/trading-backend/OctoBot-Services",
+        "/opt/venv/lib64/python3.10/site-packages/trading-backend/OctoBot-Evaluators",
+        "/opt/venv/lib64/python3.10/site-packages/trading-backend/OctoBot-Trading",
+        "/opt/venv/lib64/python3.10/site-packages/trading-backend/OctoBot-Tentacles-Manager",
+    ]
+}
