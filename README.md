@@ -38,4 +38,4 @@ OctoBot Market Cipher evaluator, based on the trading view indicator from vumanc
 https://github.com/borhandarabi/octobot-market-cipher/releases/latest/download/any_platform.zip
 
 # Trading Profile Download URL
-https://github.com/borhandarabi/octobot-market-cipher/releases/latest/download/profile.zip
+https://github.com/borhandarabi/octobot-market-cipher/releases/latest/download/market-cipher_profile.zip
